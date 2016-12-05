@@ -12,12 +12,20 @@ TicTacToe.prototype = {
     if(this.turn === this.player1) {
       var row = this.board[turn[0]];
       row[turn[1]] = 'X';
-      console.log(this.board, 'Your turn Player2');
+      console.log(this.board[0]);
+      console.log(this.board[1]);
+      console.log(this.board[2]);
+      console.log('Your turn Player2');
+      this.boardChecker();
       this.turn = this.player2;
     } else {
       var row = this.board[turn[0]];
       row[turn[1]] = 'O';
-      console.log(this.board, 'Your turn Player1');
+      console.log(this.board[0]);
+      console.log(this.board[1]);
+      console.log(this.board[2]);
+      console.log('Your turn Player1');
+      this.boardChecker();
       this.turn = this.player1;
     }
   },
@@ -40,10 +48,9 @@ TicTacToe.prototype = {
         }
       }
     }
-    console.log('xo ', xo);
     for(var k = 0; k < xo.length; k++) {
       if(xo.length < 3) {
-        console.log('No winner yet');
+        return;
       } else {
         if(winChecker.length === 0) {
           winChecker.push(xo[k][0]);
@@ -63,7 +70,6 @@ TicTacToe.prototype = {
             console.log('Winner! ', this.turn);
           }
         }
-        console.log('winChecker ', winChecker);
       }
     }
   }
@@ -76,4 +82,4 @@ game.turns([1,0]);
 game.turns([2,1]);
 game.turns([2,0]);
 game.turns([1,2]);
-game.boardChecker();
+// game.boardChecker();

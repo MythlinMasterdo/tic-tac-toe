@@ -40,12 +40,25 @@ TicTacToe.prototype = {
         }
       }
     }
+    console.log('xo ', xo);
     for(var k = 0; k < xo.length; k++) {
       if(xo.length < 3) {
         console.log('No winner yet');
       } else {
-        if(xo[i][0] === 0) {
-          winChecker.push(0);
+        if(winChecker.length === 0) {
+          winChecker.push(xo[i][0]);
+        } else if(xo[i][0] === winChecker[0]) {
+          if(winChecker.length === 3) {
+            console.log('Winner! ', this.player);
+          } else {
+            winChecker.push(xo[i][0]);
+          }
+        } else if(xo[i][0] === (winChecker[0] + 1)) {
+          if(winChecker.length === 3) {
+            console.log('Winner! ', this.player);
+          } else {
+
+          }
         }
       }
     }
@@ -57,4 +70,6 @@ game.turns([0,2]);
 game.turns([1,2]);
 game.turns([0,1]);
 game.turns([2,0]);
+game.turns([0,0]);
+game.turns([1,1]);
 game.boardChecker();

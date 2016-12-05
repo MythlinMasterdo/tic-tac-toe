@@ -16,9 +16,16 @@ TicTacToe.prototype = {
       this.turn = this.player2;
     } else {
       var row = this.board[turn[0]];
-      row[turn[1]] = 'X';
+      row[turn[1]] = 'O';
       console.log(this.board, 'Your turn Player1');
       this.turn = this.player1;
+    }
+  },
+  boardChecker: function() {
+    if(this.turn === this.player1) {
+
+    } else {
+
     }
   }
 }

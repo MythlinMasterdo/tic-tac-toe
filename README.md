@@ -1,7 +1,7 @@
 # tic-tac-toe
 
 
-How to Play:
+#How to Play:
 
 var game = new TicTacToe;
 

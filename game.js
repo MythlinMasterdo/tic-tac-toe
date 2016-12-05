@@ -46,18 +46,16 @@ TicTacToe.prototype = {
         console.log('No winner yet');
       } else {
         if(winChecker.length === 0) {
-          winChecker.push(xo[i][0]);
-        } else if(xo[i][0] === winChecker[0]) {
+          winChecker.push(xo[k][0]);
+        } else if(xo[k][0] === winChecker[0]) {
+          winChecker.push(xo[k][0]);
           if(winChecker.length === 3) {
-            console.log('Winner! ', this.player);
-          } else {
-            winChecker.push(xo[i][0]);
+            console.log('Winner! ', this.turn);
           }
         } else if(xo[i][0] === (winChecker[0] + 1)) {
+          winChecker.push(xo[k][0]);
           if(winChecker.length === 3) {
-            console.log('Winner! ', this.player);
-          } else {
-
+            console.log('Winner! ', this.turn);
           }
         }
       }
